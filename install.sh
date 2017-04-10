@@ -254,6 +254,7 @@ function post_httpd24 {
 	if ! grep -qFx "Listen 443" ${APACHE_CONF_FILE}; then echo "Listen 443" >> ${APACHE_CONF_FILE}; fi
 	if ! grep -qFx "LoadModule socache_shmcb_module libexec/mod_socache_shmcb.so" ${APACHE_CONF_FILE}; then echo "LoadModule socache_shmcb_module libexec/mod_socache_shmcb.so" >> ${APACHE_CONF_FILE}; fi
 	if ! grep -qFx "LoadModule ssl_module libexec/mod_ssl.so" ${APACHE_CONF_FILE}; then echo "LoadModule ssl_module libexec/mod_ssl.so" >> ${APACHE_CONF_FILE}; fi
+	if ! grep -qFx "LoadModule rewrite_module libexec/mod_rewrite.so" ${APACHE_CONF_FILE}; then echo "LoadModule rewrite_module libexec/mod_rewrite.so" >> ${APACHE_CONF_FILE}; fi
 	if ! grep -qFx "Listen 443" ${APACHE_CONF_FILE}; then echo "LoadModule rewrite_module libexec/mod_rewrite.so" >> ${APACHE_CONF_FILE}; fi
 	if ! grep -qFx "User ${IAM}" ${APACHE_CONF_FILE}; then echo "User ${IAM}" >> ${APACHE_CONF_FILE}; fi
 	if ! grep -qFx "Group staff" ${APACHE_CONF_FILE}; then echo "Group staff" >> ${APACHE_CONF_FILE}; fi
